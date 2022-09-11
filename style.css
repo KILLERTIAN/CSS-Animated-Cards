@@ -5,12 +5,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: #338ccc;
+}
+body.--white-bg{
     background: #ebf5fc;
+}
+body.--black-bg{
+    background: rgb(45, 45, 45);
 }
 .container{
     display: flex;
@@ -97,4 +104,43 @@ body{
 }
 .container .card:hover .box .content a{
     background: rgb(255, 71, 71);
+}
+.colorbox{
+    position: absolute;
+    display: flex;
+    right: 0;
+    width: 40px;
+    height: 40%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:10px;
+    background: rgba(22, 29, 55, 0.3);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.white,.black,.red,.blue,.yellow{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.white:hover,.black:hover,.red:hover,.blue:hover,.yellow:hover{
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    scale: 1.2;
+}
+.white{
+    background: #fff;
+}
+.black{
+    background: black;
+}
+.blue{
+    background: blue;
+}
+.red{
+    background: red;
+}
+.yellow{
+    background: yellow;
 }
