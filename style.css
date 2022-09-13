@@ -1,25 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
+    font-family: 'Poppins' sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #338ccc;
+    background: #ebf5fc
 }
-body.--white-bg{
+
+body.--white-bg {
     background: #ebf5fc;
 }
-body.--black-bg{
-    background: rgb(45, 45, 45);
+
+body.--black-bg {
+    background: #2c2c2e;
 }
-.container{
+
+body.--blue-bg {
+    background: rgb(28, 134, 255);
+}
+
+body.--red-bg {
+    background: rgb(231, 75, 44);
+}
+
+body.--yellow-bg {
+    background: rgb(243, 227, 51);
+}
+
+.container .card.--white-sh {
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.container .card.--black-sh {
+    box-shadow: rgb(16 15 15 / 50%) 5px 5px 5px inset,
+     rgb(12 11 11 / 50%) -5px -5px 5px inset,
+     rgb(86 86 86 / 15%) 5px 5px 5px,
+      rgb(62 62 62 / 50%) -5px -5px 5px;
+}
+
+.container .card.--blue-sh {
+    box-shadow: inset 5px 5px 5px rgb(24 48 108 / 50%),
+     inset -5px -5px 5px rgb(2 15 35 / 33%),
+     5px 5px 5px rgb(43 181 247 / 53%),
+      -5px -5px 5px 0px rgb(43 181 247 / 53%)
+}
+.container .card.--red-sh {
+    box-shadow: inset 5px 5px 5px rgb(75 27 27 / 50%),
+     inset -5px -5px 5px rgb(67 28 28 / 50%),
+     5px 5px 5px rgb(38 11 11 / 15%),
+      -5px -5px 5px rgb(104 17 17 / 15%)
+}
+.container .card.--yellow-sh {
+    box-shadow: inset 5px 5px 5px rgb(133 109 18 / 50%),
+     inset -5px -5px 5px rgb(149 134 68 / 50%), 
+    5px 5px 5px rgb(115 95 22 / 15%),
+     -5px -5px 5px rgb(144 115 11 / 15%)
+}
+
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,70 +77,80 @@ body.--black-bg{
     flex-wrap: wrap;
     padding: 40px 0;
 }
-.container .card{
+
+.container .card {
     position: relative;
     min-width: 320px;
     height: 440px;
-    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
-                inset -5px -5px 5px rgba(255,255,255,0.5),
-                5px 5px 5px rgba(0,0,0,0.05),
-                -5px -5px 5px rgba(255,255,255,0.5);
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+        5px 5px 5px rgba(0, 0, 0, 0.05),
+        -5px -5px 5px rgba(255, 255, 255, 0.5);
     border-radius: 15px;
-    margin: 30px;            
+    margin: 30px;
 }
-.container .card .box{
+
+.container .card .box {
     position: absolute;
     top: 20px;
     left: 20px;
-    right:20px;
+    right: 20px;
     bottom: 20px;
     background: #ebf5fc;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
 }
-.container .card:hover .box{
+
+.container .card:hover .box {
     transform: translateY(-50px);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    background: linear-gradient(45deg,#b95ce4,#4f29cd);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #b95ce4, #4f29cd);
 }
-.container .card .box .content{
+
+.container .card .box .content {
     padding: 20px;
     text-align: center;
 }
-.container .card .box .content h2{
+
+.container .card .box .content h2 {
     position: absolute;
     top: -10px;
     right: 30px;
     font-size: 8em;
-    color: rgba(0,0,0,0.02);
+    color: rgba(0, 0, 0, 0.02);
     transition: 0.5s;
     pointer-events: none;
 }
-.container .card:hover .box .content h2{
+
+.container .card:hover .box .content h2 {
     color: rgba(255, 255, 255, 0.1);
 }
-.container .card .box .content h3{
+
+.container .card .box .content h3 {
     font-size: 1.8em;
     color: #777;
     z-index: 1;
     transition: 0.5s;
 }
-.container .card .box .content p{
+
+.container .card .box .content p {
     font-size: 1em;
     font-weight: 300;
     color: #777;
     z-index: 1;
     transition: 0.5s;
 }
+
 .container .card:hover .box .content h3,
-.container .card:hover .box .content p{
+.container .card:hover .box .content p {
     color: #fff;
 }
-.container .card .box .content a{
+
+.container .card .box .content a {
     position: relative;
     display: inline-block;
     padding: 8px 20px;
@@ -100,47 +160,64 @@ body.--black-bg{
     color: #fff;
     text-decoration: none;
     font-weight: 400;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-.container .card:hover .box .content a{
+
+.container .card:hover .box .content a {
     background: rgb(255, 71, 71);
 }
-.colorbox{
+
+.colorbox {
     position: absolute;
     display: flex;
     right: 0;
     width: 40px;
     height: 40%;
     border-top-left-radius: 10px;
-    border-bottom-left-radius:10px;
-    background: rgba(22, 29, 55, 0.3);
+    border-bottom-left-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.white,.black,.red,.blue,.yellow{
+
+.white,
+.black,
+.red,
+.blue,
+.yellow {
     height: 25px;
     width: 25px;
     border-radius: 50%;
     margin: 15px 0;
     cursor: pointer;
 }
-.white:hover,.black:hover,.red:hover,.blue:hover,.yellow:hover{
+
+.white:hover,
+.black:hover,
+.red:hover,
+.blue:hover,
+.yellow:hover {
     border: 2px solid rgba(0, 0, 0, 0.5);
     scale: 1.2;
 }
-.white{
+
+.white {
     background: #fff;
 }
-.black{
+
+.black {
     background: black;
 }
-.blue{
+
+.blue {
     background: blue;
 }
-.red{
+
+.red {
     background: red;
 }
-.yellow{
+
+.yellow {
     background: yellow;
 }
